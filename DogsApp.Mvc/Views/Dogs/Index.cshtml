@@ -9,8 +9,10 @@
     <ol>
         @foreach (var dog in Model)
         {
-            <li>@dog.Name</li>
+            <li>@dog.Name @dog.Age @dog.Id</li>
         }
+        
     </ol>
+    <a href="/create">Add Dog</a>
 </body>
 </html>

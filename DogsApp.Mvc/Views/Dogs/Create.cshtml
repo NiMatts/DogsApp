@@ -1,5 +1,17 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>New Dog</title>
+    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
+</head>
+<body>
+    <h2>New Dog</h2>
+    <form action="/create" method="post">
+        <label>Dog name</label>
+        <input type="text" name="Name" />
+        <label>Dog Age</label>
+        <input type="number" name="Age" />
+        <input type="submit" value="Create" />
+    </form>
+</body>
+</html>

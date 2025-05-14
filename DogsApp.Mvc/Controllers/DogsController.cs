@@ -7,7 +7,7 @@ namespace DogsApp.Mvc.Controllers;
 public class DogsController : Controller
 {
     static DogService dogService = new DogService();
-
+    //4e: annars skapas en ny lista
     public DogsController() { }
 
     [HttpGet("")]
