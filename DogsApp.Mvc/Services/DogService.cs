@@ -25,5 +25,17 @@ namespace DogsApp.Mvc.Services
             dog.Id = dogs.Max(o => o.Id) + 1;
             dogs.Add(dog);
         }
+
+        public void DeleteDog(int id)
+        {
+
+        }
+
+        public void EditDog(int id, string name, int age)
+        {
+            var dog = GetDogById(id);
+            dog.Name = name;
+            dog.Age = age;
+        }
     }
 }

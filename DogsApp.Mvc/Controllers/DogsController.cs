@@ -17,6 +17,8 @@ public class DogsController : Controller
         return View(model);
     }
 
+
+
     [HttpGet("create")]
     public IActionResult Create()
     {
@@ -29,6 +31,22 @@ public class DogsController : Controller
         dogService.AddDog(dog);
 
         return RedirectToAction(nameof(Index));
+    }
+
+    [HttpPost("edit")]
+    public IActionResult Edit(int id, string name, int age)
+    {
+        
+        dogService.EditDog(id, name, age);
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    [HttpGet("edit/{id}")]
+    public IActionResult Edit(int id)
+    {
+        var model = dogService.GetDogById(id);
+        return View(model);
     }
 
 }

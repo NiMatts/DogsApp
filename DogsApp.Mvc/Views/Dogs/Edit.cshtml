@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Dog</title>
+    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
+</head>
+<body>
+    <h2>Edit Dog</h2>
+    <form action="/edit" method="post">
+        <label>Dog name: @Model.Name</label>
+        <input type="text" name="Name" value="@Model.Name" />
+        <label>Dog Age</label>
+        <input type="number" name="Age" value="@Model.Age" />
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="submit" value="Edit"/>
+    </form>
+</body>
+</html>
