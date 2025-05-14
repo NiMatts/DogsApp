@@ -22,13 +22,22 @@ namespace DogsApp.Mvc.Services
 
         public void AddDog(Dog dog)
         {
-            dog.Id = dogs.Max(o => o.Id) + 1;
+            if (dogs.Count == 0)
+            {
+                dog.Id = 1;
+            }
+            else
+            {
+                dog.Id = dogs.Max(o => o.Id) + 1;
+            }
+
             dogs.Add(dog);
         }
 
         public void DeleteDog(int id)
         {
-
+            var dog = dogs.FirstOrDefault();
+            dogs.Remove(dog);
         }
 
         public void EditDog(int id, string name, int age)

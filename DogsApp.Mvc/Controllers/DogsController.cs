@@ -1,6 +1,8 @@
-﻿using DogsApp.Mvc.Models;
+﻿using System.Xml.Linq;
+using DogsApp.Mvc.Models;
 using DogsApp.Mvc.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DogsApp.Mvc.Controllers;
 
@@ -17,7 +19,12 @@ public class DogsController : Controller
         return View(model);
     }
 
-
+    [HttpPost("{id}")]
+    public IActionResult Delete(int id)
+    {
+        dogService.DeleteDog(id);
+        return RedirectToAction(nameof(Index));
+    }
 
     [HttpGet("create")]
     public IActionResult Create()

@@ -11,10 +11,14 @@
         {
             <li>@dog.Name @dog.Age @dog.Id
                 <a href="/edit/@dog.Id">Edit Dog</a>
+                <form action="delete" method="post">
+                    <input type="submit" value="Delete" />
+                </form>
             </li>
         }
         
     </ol>
     <a href="/create">Add Dog</a>
 </body>
+
 </html>
